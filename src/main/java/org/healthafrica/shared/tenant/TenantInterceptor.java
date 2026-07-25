@@ -18,6 +18,10 @@ public class TenantInterceptor implements HandlerInterceptor {
             HttpServletResponse response,
             Object handler) {
 
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            return true;
+        }
+
         if (TenantContextHolder.getTenant() == null
                 || TenantContextHolder.getTenant().isBlank()) {
             throw new org.healthafrica.shared.exception.MissingTenantException(
