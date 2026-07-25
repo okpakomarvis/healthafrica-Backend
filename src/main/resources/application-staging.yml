@@ -1,0 +1,21 @@
+# Staging profile — no secrets in this file.
+# Provide values via environment variables / .env.staging (gitignored).
+# Activate with: SPRING_PROFILES_ACTIVE=staging
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  rabbitmq:
+    # CloudAMQP AMQP URL (amqps://user:pass@host/vhost) — not MQTT
+    addresses: ${SPRING_RABBITMQ_ADDRESSES}
+
+jwt:
+  secret: ${JWT_SECRET}
+
+logging:
+  level:
+    root: INFO
+    org.healthafrica: INFO

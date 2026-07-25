@@ -1,0 +1,2 @@
+ALTER TABLE tenant
+    ADD COLUMN IF NOT EXISTS subscription_status VARCHAR(32) NOT NULL DEFAULT 'NONE';

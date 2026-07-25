@@ -1,0 +1,21 @@
+# Local profile — copy to application-local.yml (gitignored).
+# Activate with: SPRING_PROFILES_ACTIVE=local  (default)
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/healthdb
+    username: health
+    password: health
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+jwt:
+  secret: local-dev-secret-change-me-must-be-long-enough-32chars
+
+logging:
+  level:
+    org.healthafrica: DEBUG
