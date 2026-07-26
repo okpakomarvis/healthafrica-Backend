@@ -26,6 +26,6 @@ services:
       - key: JWT_SECRET
         sync: false
       - key: JWT_EXPIRATION
-        value: "86400000"
+        sync: false
       - key: CORS_ALLOWED_ORIGINS
-        value: "https://healthafrica-frontend.vercel.app,http://localhost:5173"
+        value: "http://localhost:5173"
