@@ -7,7 +7,6 @@ services:
     name: healthafrica-api-staging
     runtime: docker
     plan: free
-    rootDir: backend
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /actuator/health
