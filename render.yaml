@@ -1,0 +1,32 @@
+# Render Blueprint — staging backend only.
+# Secrets are configured in the Render dashboard (Environment), not in this file.
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: healthafrica-api-staging
+    runtime: docker
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: staging
+      - key: PORT
+        value: "8080"
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: SPRING_RABBITMQ_ADDRESSES
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRATION
+        value: "86400000"
+      - key: CORS_ALLOWED_ORIGINS
+        value: "https://healthafrica-frontend.vercel.app,http://localhost:5173"
